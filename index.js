@@ -9,8 +9,6 @@ app.use(cors());
 app.use(express.json());
 
 
-
-
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = `mongodb+srv://${process.env.DBUSER}:${process.env.DBPASS}@cluster0.efhcwjr.mongodb.net/?retryWrites=true&w=majority`;
 
@@ -32,7 +30,7 @@ async function run() {
     console.log("Pinged your deployment. You successfully connected to MongoDB!");
   } finally {
     // Ensures that the client will close when you finish/error
-    // await client.close();
+    await client.close();
   }
 }
 run().catch(console.dir);
