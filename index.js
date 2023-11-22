@@ -34,7 +34,7 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     // Connect the client to the server	(optional starting in v4.7)
-    // Send a ping to confirm a successful connection
+
     // await client.connect();
 
     const featuredTripsCollections = client
@@ -67,7 +67,6 @@ async function run() {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
-  
 
   // Get Specific Featured Trips 
   app.get("/featured-details/:id", async (req, res) => {
