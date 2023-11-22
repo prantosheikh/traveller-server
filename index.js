@@ -67,6 +67,7 @@ async function run() {
       res.status(500).json({ error: 'Internal Server Error' });
     }
   });
+  
 
   // Get Specific Featured Trips 
   app.get("/featured-details/:id", async (req, res) => {
